@@ -1,0 +1,10 @@
+**/.env
+**/__pycache__/
+*.pyc
+.DS_Store
+*.log
+resume_maker/outputs/
+Abhiram_Resume.docx
+jobwatcher/seen_jobs.json
+**/__pycache__/
+*.pyc

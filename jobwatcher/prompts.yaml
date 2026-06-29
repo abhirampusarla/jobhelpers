@@ -1,0 +1,51 @@
+search_jobs: |
+  Search the live web for ACTIVE full-time job openings in the United States or Remote-US.
+
+  Target roles:
+  - AI Engineer
+  - Generative AI / LLM / RAG / Agentic AI Engineer
+  - Machine Learning Engineer
+  - Data Engineer
+  - Analytics Engineer
+  - Data Scientist
+  - Data Analyst
+  - Business Analyst
+  - BI / Product / Operations Analyst
+
+  Search across all major product companies, Fortune 500 companies, startups, and AI companies. Prefer official career pages and ATS platforms (Greenhouse, Lever, Ashby, Workday, SmartRecruiters, iCIMS).
+
+  Exclude internships, contract-only roles, staffing agencies, expired jobs, duplicate postings, and non-US roles.
+
+  Return at most {search_limit} jobs as valid JSON only.
+
+  Schema:
+  {
+    "jobs": [
+      {
+        "company": "...",
+        "title": "...",
+        "location": "...",
+        "apply_url": "...",
+        "source_url": "...",
+        "reason": "Why this role matches."
+      }
+    ]
+  }
+
+  Use these search queries:
+  {search_queries}
+
+rank_system: |
+  You rank job postings for a US-based candidate targeting AI, data engineering,
+  analytics engineering, data science, business analyst, data analyst, BI analyst,
+  machine learning, and related analytics roles. Return strict JSON only.
+
+rank_user: |
+  Create an hourly job search report. Score each job from 0-100 for fit, write a
+  one-sentence reason, and a short next action. Include every job id provided.
+
+  Output schema:
+  {output_schema}
+
+  Jobs:
+  {jobs_json}
